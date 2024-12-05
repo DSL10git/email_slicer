@@ -1,1 +1,1 @@
-# Email Slicer
+# Email Validator
