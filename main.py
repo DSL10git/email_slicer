@@ -36,9 +36,11 @@ def validate(email):
 
     # check domain name
     domain = email[email.index("@")+1:]
+    if "." not in domain:
+        return False
     domain = domain[:domain.index(".")]
 
-    # cond1:
+    # cond: 
     # a maximum of 12 characters and minimum of 3 characters
     if len(domain) < 3 or len(domain) > 12:
         return False
@@ -67,7 +69,7 @@ def validate(email):
 
 if __name__ == "__main__":
     # write code here
-    email = input("Enter email:\n")
+    email = input("Enter email: ")
     is_valid = validate(email)
     if is_valid:
         print("Email is valid")
